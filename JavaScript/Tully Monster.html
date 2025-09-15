@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tully Monster</title>
+    <style>
+        #monster {
+            display: none; 
+        }
+    </style>
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<h1>The Tully Monster</h1>
+
+<div id="page">
+
+<form name="question">
+    <p id="box"><h2>How long was the Tully Monster?</h2></p>
+    Answer: <input type="text" name="answer">
+    <button type="button" onclick="validate()">Show answer</button>
+
+    <p id="box2"><h2>Click below to find out where it lived.</h2></p>
+
+    <button type="button" onclick="document.getElementById('box2').innerHTML = 'It lived in the tropical estuaries of Illinois, USA.'">
+        Show location
+    </button>
+</form>
+
+
+<div id="monster">
+    <img src="TullyMonster.png" alt="Tully Monster">
+</div>
+
+<button type="button" onclick="showHide()">Show / Hide Image</button>
+
+<script>
+
+
+function validate() {
+	document.write("<h1>Goodbye world!<h1>")
+    var x = document.forms["question"]["answer"].value;
+    if (x == "") {
+        document.getElementById("box").style.color = "red";
+    } 
+    else if (x == "35cm") {
+        alert("Correct!");
+    } 
+    else {
+        alert("Try again!");
+    }
+}
+
+function showHide() {
+    var x = document.getElementById("monster");
+    if (x.style.display == 'block')
+        x.style.display = 'none';
+    else
+        x.style.display = 'block';
+}
+</script>
+
+</div>
+
+</body>
+</html>
