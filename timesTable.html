@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function timesTable() {
+                var table = document.getElementById('table').value;
+                var rows = document.getElementById('rows').value;
+
+                var strOutput = ""
+
+                for(var i=1;i<=rows;i++) {
+                    strOutput = strOutput + "<p>" + i + "x" + table + "=" + table * i + "</p>"
+                }
+
+                //chosenElement.innerHTML = 'Hello world'
+                var output = document.getElementById('output')
+                output.innerHTML = strOutput// + "<p>" + i + "</pi>"
+
+
+
+
+                return false;
+
+            }
+        </script>
+    </head>
+
+
+    <body>
+        <h1>Times Table Generator</h1>
+        <form onsubmit="return timesTable()">
+            <p>Table <input type="text" id="table" value="0"></p>
+            <p>Rows <input type="text" id="rows" value="0"></p>
+            <p><input type="submit"></p>
+        </form>
+        <p id="output"></p>
+
+    </body>
+</html>
